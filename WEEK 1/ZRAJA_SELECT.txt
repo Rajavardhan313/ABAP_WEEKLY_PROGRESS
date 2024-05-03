@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report ZRAJA_SELECT
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZRAJA_SELECT.
+
+PARAMETERS P_LIFNR TYPE LFA1-LIFNR.
+
+DATA : LV_ERSDA TYPE MARA-ERSDA , LV_ERNAM TYPE MARA-ERNAM , LV_LAND1 TYPE LFA1-LAND1 , LV_NAME1 TYPE LFA1-NAME1.
+
+SELECT LAND1 NAME1 INTO ( LV_LAND1 , LV_NAME1 ) FROM LFA1 WHERE LIFNR = P_LIFNR.
+
+  WRITE : / LV_LAND1 , LV_NAME1.
+
+
+  ENDSELECT.
